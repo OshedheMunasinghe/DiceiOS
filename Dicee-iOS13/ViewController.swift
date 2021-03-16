@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var leftDiceNumber = 0
+    var leftDecreaseNumber = 5
  //Here you connect ImageView
     @IBOutlet weak var diceImageView1: UIImageView!
     
@@ -20,14 +22,29 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //Dice 1
-        diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageView1.alpha = 0.5
+      //  diceImageView1.image = #imageLiteral(resourceName: "DiceSix")
+        //diceImageView1.alpha = 0.5
         
         //Dice 2
-        diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
+        //diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
     
     }
 
-
+// Button to press
+    @IBAction func rollButtonPressed(_ sender: Any) {
+        print("Button got tapped") //den dyker upp debugging console d.log()
+      //  diceImageView2.image = #imageLiteral(resourceName: "DiceThree")
+        //diceImageView1.image = #imageLiteral(resourceName: "DiceFive")
+        
+        diceImageView1.image =   [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")][leftDiceNumber]
+        
+        leftDiceNumber += 1
+        
+        diceImageView2.image =  [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")][leftDecreaseNumber]
+        leftDecreaseNumber -= 1
+        
+        
+        
+    }
 }
 
