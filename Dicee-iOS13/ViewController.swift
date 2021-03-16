@@ -36,12 +36,13 @@ class ViewController: UIViewController {
       //  diceImageView2.image = #imageLiteral(resourceName: "DiceThree")
         //diceImageView1.image = #imageLiteral(resourceName: "DiceFive")
         
-        diceImageView1.image =   [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")][leftDiceNumber]
+        let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
         
-        leftDiceNumber += 1
         
-        diceImageView2.image =  [#imageLiteral(resourceName: "DiceOne"),#imageLiteral(resourceName: "DiceTwo"),#imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix")][leftDecreaseNumber]
-        leftDecreaseNumber -= 1
+       //randomElement gör jobbet att kolla igenom bilderna och gör random istället göra klassicern random
+        diceImageView1.image = diceArray.randomElement() 
+        diceImageView2.image =  diceArray.randomElement()
+        
         
         
         
